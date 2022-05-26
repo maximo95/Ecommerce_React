@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+}
+
+.navegador{
+    display: flex;
+    background-color: #386150;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.imagenLogo {
+    height: 70px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    padding-right: 30px;
+    font-weight: 600;
+}
+
+a:hover {
+    color: white;
+}
