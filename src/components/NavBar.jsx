@@ -1,5 +1,6 @@
 import './NavBar.css'
 import logo_para_html_cafe from  '../assets/logo_para_html_cafe.png'
+import CartWidget from './CartWidget'
 
 function Navbar () {
     return (
@@ -12,6 +13,7 @@ function Navbar () {
     <a href="#">Inicio</a>
     <a href="#">Sobre nosotros</a>
     <a href="#" className='linkNav'>Contacto</a>
+    <CartWidget/>
     </div>
     </nav>
     </>
