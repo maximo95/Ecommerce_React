@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <ItemListContainer Greeting={"Bienvenidos a mi Ecommerce"}/>
+    <ItemListContainer Greeting={"Bienvenidos a mi Ecommerce"} stock = {7} minimo ={1}/>
     </>
   );
 }
