@@ -29,8 +29,8 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
     <>
     <div className='saludo'>{Greeting}</div>
     <div className='contador'>
-    <button className='boton' onClick={()=> {sumarProducto()}}>+</button>
-    <button className='boton' onClick={restarProducto}>-</button>
+    <button className='boton' onClick={()=> {sumarProducto()}}> + </button>
+    <button className='boton' onClick={() => {restarProducto()}}> - </button>
     <button className='boton' onClick={() => {onAdd();reiniciar();}}>Agregar Carrito</button>
     <p> {valor}</p>
     </div>
