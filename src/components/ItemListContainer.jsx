@@ -18,17 +18,22 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
     }
   }
 
-  const onAdd = ()=>{alert (`se agregaron ${valor} productos al carrito`)}
+ //const onAdd = ()=>{alert (`se agregaron ${valor} productos al carrito`);
+ //setValor(minimo);}
 
+  const onAdd = () => {alert (`se agregaron ${valor} productos al carrito`)}
+ 
   const reiniciar = () => {setValor (minimo)}
 
   return (
     <>
     <div className='saludo'>{Greeting}</div>
-    <button onClick={sumarProducto}>+</button>
-    <button onClick={restarProducto}>-</button>
-    <button onClick={() => ({onAdd, reiniciar})}>Agregar Carrito</button>
+    <div className='contador'>
+    <button className='boton' onClick={()=> {sumarProducto()}}>+</button>
+    <button className='boton' onClick={restarProducto}>-</button>
+    <button className='boton' onClick={() => {onAdd();reiniciar();}}>Agregar Carrito</button>
     <p> {valor}</p>
+    </div>
     </>
   )
 }
