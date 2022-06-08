@@ -4,36 +4,50 @@ import'./ItemListContainer.css'
 export default function ItemListContainer({Greeting, stock,minimo}) {
 
 //Practica clase
-  const [cargando,setCargando] = useState (true)
-  const [error, setError] = useState (false)
-  const [resultado, setResultado] = useState ([])
+ //const [cargando,setCargando] = useState (true)
+  //const [error, setError] = useState (false)
+  //const [resultado, setResultado] = useState ([])
 
-  useEffect(() => {
+  //useEffect(() => {
 
-    const promesa = new Promise ((resolve,reject) => {
-      setTimeout(() => {
-        resolve([{id: "id de la compra", monto : 7000},{id: "otro id", monto : 500}])
+    //const promesa = new Promise ((resolve,reject) => {
+      //setTimeout(() => {
+       // resolve([{id: "id de la compra", monto : 7000},{id: "otro id", monto : 500}])
         //reject("error en la carga")
-      }, 2000);      
-    })
+     // }, 2000);      
+    //})
 
-      promesa.then ((resultado)=>{
-        setResultado (resultado);
-        console.log(promesa);
-        console.log(resultado);})
+      //promesa.then ((resultado)=>{
+        //setResultado (resultado);
+        //console.log(promesa);
+        //console.log(resultado);})
 
-      promesa.catch ((error)=>{
+      //promesa.catch ((error)=>{
       
-        setError (true);
-        console.log(error);})
+        //setError (true);
+       // console.log(error);})
     
-      promesa.finally(()=>{
-        setCargando (false);
-      })
+     // promesa.finally(()=>{
+        //setCargando (false);
+     // })
  
-  }, [])
+  //}, [])
 
-  //Desafío 
+
+  //<div>{cargando && "CARGANDO DATOS" }</div>
+  //<div>{error && "NO SE PUDO CARGAR"}</div>
+  //<div>{resultado && (resultado.map((item) => (
+  //<>
+  //<p>ID:{item.id}</p>
+  //<p>monto:{item.monto}</p>
+  //</>
+  //)))}</div>
+
+
+
+
+  //Desafío Promesas
+
   const [cargandoProducto,setCargandoProducto] = useState (true)
   const [errorProducto, setErrorProducto] = useState (false)
   const [productos,setProductos] = useState ([]);
@@ -48,14 +62,14 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
             titulo:"cafe brasil",
             description:"Cafe extraido de la amazana brasilera y producido de forma organica" ,
             precio:3500,
-            imagen:'/imagenes/cafe_brasil_compras.png',
+            imagen:'/imagenes/cafe_brasil_compra.png',
           },
           { 
             id:2,
             titulo:"cafe catucai",
             description:"Cafe extraido de catucai y producido de forma organica" ,
             precio:3000,
-            imagen:'/imagenes/cafe_catucai.png',
+            imagen:'/imagenes/cafe_catucai.jpg',
           },
           {
             id:3,
@@ -121,15 +135,6 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
   return (
     <>
 
-    <div>{cargando && "CARGANDO DATOS" }</div>
-    <div>{error && "NO SE PUDO CARGAR"}</div>
-    <div>{resultado && (resultado.map((item) => (
-    <>
-    <p>ID:{item.id}</p>
-    <p>monto:{item.monto}</p>
-    </>
-    )))}</div>
-    <ItemList productos = {productos}/>
     <div className='saludo'>{Greeting}</div>
     <div className='contador'>
     <button className='boton' onClick={()=> {sumarProducto()}}> + </button>
@@ -137,6 +142,9 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
     <button className='boton' onClick={() => {onAdd();reiniciar();}}>Agregar Carrito</button>
     <p> {valor}</p>
     </div>
+    <ItemList productos = {productos} errorProducto={errorProducto} cargandoProducto={cargandoProducto} />
+    
+
     </>
   )
 }

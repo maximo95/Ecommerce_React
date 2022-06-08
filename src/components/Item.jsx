@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 
-export default function Item(elemento) {
+export default function Item({elemento}) {
 
     const {titulo,description, precio,imagen} = elemento
 
@@ -12,10 +12,13 @@ export default function Item(elemento) {
             <Card.Title>{titulo}</Card.Title>
             <Card.Text>
             
-                {description}
-                precio: {precio}
-
+                {description} 
             </Card.Text>
+            <Card.Text>
+                precio: {precio}
+            </Card.Text>
+
+            
             <Button variant="primary">Ver detalle</Button>
         </Card.Body>
         </Card>
