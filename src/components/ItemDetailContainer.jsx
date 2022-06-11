@@ -18,11 +18,12 @@ export default function ItemDetailContainer() {
                 precio:3500,
                 imagen:'/imagenes/cafe_brasil_compra.png'
                 }]
-            )
-            },2000)
+                
+                )
 
-            promesaDetail.then ((resultadoDetail)=>{
-                setDetail (resultadoDetail);
+            promesaDetail.then ((detail)=>{
+                setDetail (detail);
+                console.log (detail)
             })
 
             promesaDetail.catch((errorDetail)=>{
@@ -30,6 +31,10 @@ export default function ItemDetailContainer() {
             })
             promesaDetail.finally (()=>{setCargandoDetail(false)})
 
+            console.log ("terminé la promesa")
+
+        },2000)
+        
         }) 
 
     }, [])
@@ -38,8 +43,17 @@ export default function ItemDetailContainer() {
 
 
     return (
+    <>
 
-    <ItemDetail cargandoDetail = {cargandoDetail} errorDetail = {errorDetail} detail = {detail} />
+
+{console.log("detail")}{console.log(detail)}
+        <div>{detail && detail.map (detalle => <ItemDetail key ={detalle.id}  detail ={detalle} cargandoDetail ={cargandoDetail} /> ) }</div>
+
+        {console.log(detail)}
+        
+        <div>{errorDetail && "No se pudo cargar los productos"}</div>
+
+    </>
 
   )
 }

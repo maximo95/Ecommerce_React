@@ -9,9 +9,18 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 function App() {
   return (
     <>
+    {/*<BrowserRouter>
+
+  <Routes>*/}
+
     <Navbar/>
     <ItemListContainer Greeting={"Bienvenidos a mi Ecommerce"} stock = {7} minimo ={1}/>
     <ItemDetailContainer/>
+
+   {/* </Routes>
+
+</BrowserRouter>*/}
+
     </>
   );
 }
