@@ -3,17 +3,17 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 
 
-function ItemDetail({detail}) {
-console.log ("detail de ItemDetail")
-  console.log (detail);
+function ItemDetail({detail,cargandoDetail}) {
 
-    const {description, precio,imagen,cargandoDetail} = detail
+    const {description, precio,imagen} = detail
+
+    console.log (cargandoDetail)
 
   return (
     <>
     <div>
-    {(cargandoDetail && "Cargando los detalles") ||
-      (<Card style={{ width: '18rem' }}>
+  
+      <Card style={{ width: '18rem' }}>
           <Card.Img variant="top" src={imagen} />
           <Card.Body>
               <Card.Title>{precio}</Card.Title>
@@ -21,7 +21,7 @@ console.log ("detail de ItemDetail")
               {description}
               </Card.Text>
           </Card.Body>
-      </Card>)}
+      </Card>
     </div>
     </>
     

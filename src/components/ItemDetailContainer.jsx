@@ -46,12 +46,17 @@ export default function ItemDetailContainer() {
     <>
 
 
-{console.log("detail")}{console.log(detail)}
         <div>{detail && detail.map (detalle => <ItemDetail key ={detalle.id}  detail ={detalle} cargandoDetail ={cargandoDetail} /> ) }</div>
 
-        {console.log(detail)}
+
         
         <div>{errorDetail && "No se pudo cargar los productos"}</div>
+
+
+
+        <div>{cargandoDetail && "Cargando los detalles del itemDetail.jsx"}</div>
+
+
 
     </>
 
