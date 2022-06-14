@@ -122,6 +122,7 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
   const [productos,setProductos] = useState ([]);
 
   useEffect(() => {
+
     const promesaProductos = new Promise ((resolveProductos,rejectProductos) =>{
 
       setTimeout (()=>{
