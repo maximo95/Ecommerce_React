@@ -1,6 +1,72 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList'
 import'./ItemListContainer.css'
+
+
+
+let items = [
+  { 
+    id:1,
+    titulo:"cafe brasil",
+    description:"Cafe extraido de la amazana brasilera y producido de forma organica" ,
+    precio:3500,
+    imagen:'/imagenes/cafe_brasil_compra.png',
+    categoria: "granos",
+  },
+  { 
+    id:2,
+    titulo:"cafe catucai",
+    description:"Cafe extraido de catucai y producido de forma organica" ,
+    precio:3000,
+    imagen:'/imagenes/cafe_catucai.jpg',
+    categoria: "granos",
+  },
+  {
+    id:3,
+    titulo:"cafe colombiano",
+    description:"Cafe extraido de las selvas colombianas y producido de forma organica" ,
+    precio:6000,
+    imagen:'/imagenes/cafe_col_compra.png',
+    categoria: "granos",
+  },
+  {
+    id:4,
+    titulo:"cafe costa rica",
+    description:"Cafe extraido de las zona rurales de costa rica y producido de forma organica" ,
+    precio:8000,
+    imagen:'/imagenes/cafe_costarica.png',
+    categoria: "granos",
+  },
+  {
+    id:5,
+    titulo: "cafetera expresse",
+    description: "Cafetera express profecional, diseñada para sacarle el mejor sabor al cafe",
+    precio:8000,
+    imagen: '/imagenes/cafetera_express.jpg',
+    categoria: "cafeteras",
+  },
+
+  {
+    id:6,
+    titulo: "cafetera italiana",
+    description: "Cafetera italiana profecional, diseñada para preparar cafe italiano",
+    precio:8000,
+    imagen: '/imagenes/cafetera_italiana.jpg',
+    categoria: "cafeteras",
+  },
+
+  {
+    id:7,
+    titulo: "cafetera francesa",
+    description: "Cafetera francesa profecional, diseñada para preparar cafe frances",
+    precio:8000,
+    imagen: '/imagenes/prensa_francesa.jpg',
+    categoria: "cafeteras",
+  }
+
+];
 export default function ItemListContainer({Greeting, stock,minimo}) {
 
 //Practica clase
@@ -46,7 +112,11 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
 
 
 
-  //Desafío Promesas
+  
+
+  const {id} = useParams ();
+
+  console.log (id);
 
   const [cargandoProducto,setCargandoProducto] = useState (true)
   const [errorProducto, setErrorProducto] = useState (false)
@@ -56,35 +126,7 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
     const promesaProductos = new Promise ((resolveProductos,rejectProductos) =>{
 
       setTimeout (()=>{
-        resolveProductos ([
-          { 
-            id:1,
-            titulo:"cafe brasil",
-            description:"Cafe extraido de la amazana brasilera y producido de forma organica" ,
-            precio:3500,
-            imagen:'/imagenes/cafe_brasil_compra.png',
-          },
-          { 
-            id:2,
-            titulo:"cafe catucai",
-            description:"Cafe extraido de catucai y producido de forma organica" ,
-            precio:3000,
-            imagen:'/imagenes/cafe_catucai.jpg',
-          },
-          {
-            id:3,
-            titulo:"cafe colombiano",
-            description:"Cafe extraido de las selvas colombianas y producido de forma organica" ,
-            precio:6000,
-            imagen:'/imagenes/cafe_col_compra.png',
-          },
-          {
-            id:4,
-            titulo:"cafe costa rica",
-            description:"Cafe extraido de las zona rurales de costa rica y producido de forma organica" ,
-            precio:8000,
-            imagen:'/imagenes/cafe_costarica.png',
-          }])
+       (!id) ?  resolveProductos (items) : resolveProductos (items.filter(productoFiltrado =>productoFiltrado.categoria === id))
       },2000)
       })
 
@@ -104,7 +146,7 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
         setCargandoProducto (false);
       })
   
-  }, [])
+  }, [id])
   
 
 
@@ -143,8 +185,7 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
     <p> {valor}</p>
     </div>
     <ItemList productos = {productos} errorProducto={errorProducto} cargandoProducto={cargandoProducto} />
-    
-
+    <ItemDetailContainer productos = {productos} />
     </>
   )
 }

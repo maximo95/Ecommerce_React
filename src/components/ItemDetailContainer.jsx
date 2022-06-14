@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 
-export default function ItemDetailContainer() {
+export default function ItemDetailContainer({productos}) {
 
+    const {id} = useParams()
     const [cargandoDetail,setCargandoDetail] = useState (true)
     const [errorDetail, setErrorDetail] = useState (false)
-    const [detail,setDetail] = useState ([]);
+    const [detail,setDetail] = useState ({});
+
+    console.log(productos)
 
     useEffect(() => {
 
         const promesaDetail = new Promise ((resolveDetail,rejectDetail)=>{
 
             setTimeout (()=>{resolveDetail (
-                [{ 
-                id:1,
-                description:"Cafe extraido de la amazana brasilera y producido de forma organica" ,
-                precio:3500,
-                imagen:'/imagenes/cafe_brasil_compra.png'
-                }]
+                
+
+                productos.find (articulo =>articulo.id == id)
                 
                 )
 
@@ -37,7 +38,7 @@ export default function ItemDetailContainer() {
         
         }) 
 
-    }, [])
+    }, [id])
     
 
 
@@ -46,9 +47,9 @@ export default function ItemDetailContainer() {
     <>
 
 
-        <div>{detail && detail.map (detalle => <ItemDetail key ={detalle.id}  detail ={detalle} cargandoDetail ={cargandoDetail} /> ) }</div>
+        {/*<div>{detail && detail.map (detalle => <ItemDetail key ={detalle.id}  detalle ={detalle} cargandoDetail ={cargandoDetail} /> ) }</div>*/}
 
-
+        <ItemDetail detail = {detail} cargandoDetail ={cargandoDetail}/>
         
         <div>{errorDetail && "No se pudo cargar los productos"}</div>
 
