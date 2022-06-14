@@ -8,7 +8,7 @@ function Navbar () {
     <>
     <nav className='navegador'>
     <div>
-    <img src={logo_para_html_cafe} alt="logo del ecommerce" className='imagenLogo' />
+    <Link to = '/'> <img src={logo_para_html_cafe} alt="logo del ecommerce" className='imagenLogo' /></Link>
     </div>
     <div >
     <Link to= '/inicio'>Inicio</Link>

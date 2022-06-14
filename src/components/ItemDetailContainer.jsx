@@ -10,21 +10,21 @@ export default function ItemDetailContainer() {
     const [errorDetail, setErrorDetail] = useState (false)
     const [detail,setDetail] = useState ({});
 
-    
+    console.log(id)
+    console.log(typeof id)
 
     useEffect(() => {
 
         const promesaDetail = new Promise ((resolveDetail,rejectDetail)=>{
 
-            setTimeout (()=>{resolveDetail (
-                
-                console.log (detallesProductos),
-                detallesProductos.find (articulo =>articulo.id === id)
-                
-                )
+            setTimeout (()=>{resolveDetail (detallesProductos.find (articulo =>articulo.id == id))
+            },2000)
+        
+        }) 
 
             promesaDetail.then ((articulo)=>{
                 setDetail (articulo);
+                console.log ('el articulo es:')
                 console.log (articulo)
             })
 
@@ -35,9 +35,7 @@ export default function ItemDetailContainer() {
 
             console.log ("terminé la promesa")
 
-        },2000)
-        
-        }) 
+       
 
     }, [id])
     
@@ -47,10 +45,10 @@ export default function ItemDetailContainer() {
     return (
     <>
 
-
+        	{console.log (detail)}
         {/*<div>{detail && detail.map (detalle => <ItemDetail key ={detalle.id}  detalle ={detalle} cargandoDetail ={cargandoDetail} /> ) }</div>*/}
 
-        <ItemDetail detail={detail} cargandoDetail ={cargandoDetail}/>
+        <ItemDetail detail={detail} />
         
         <div>{errorDetail && "No se pudo cargar los productos"}</div>
 

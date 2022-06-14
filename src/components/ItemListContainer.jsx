@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList'
 import'./ItemListContainer.css'
 
@@ -185,7 +184,6 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
     <p> {valor}</p>
     </div>
     <ItemList productos = {productos} errorProducto={errorProducto} cargandoProducto={cargandoProducto} />
-    <ItemDetailContainer productos = {productos} />
     </>
   )
 }

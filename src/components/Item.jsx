@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default function Item({elemento}) {
 
-    const {titulo,description, precio,imagen} = elemento
+    const {titulo,description, precio,imagen,id} = elemento
 
   return (
         <Card style={{ width: '18rem' }}>
@@ -18,8 +19,8 @@ export default function Item({elemento}) {
                 precio: {precio}
             </Card.Text>
 
-            
-            <Button variant="primary">Ver detalle</Button>
+           
+            <Link to={'/item/' + id} >  <Button variant="primary">Ver detalle</Button> </Link>
         </Card.Body>
         </Card>
   )
