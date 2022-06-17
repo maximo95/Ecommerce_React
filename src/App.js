@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/NavBar";
+import Cart from './components/Cart';
 
 
 
@@ -27,6 +28,8 @@ function App() {
       {/*<Navbar/>
       <ItemListContainer Greeting={"Bienvenidos a mi Ecommerce"} stock = {7} minimo ={1}/>
     <ItemDetailContainer/>*/}
+
+      <Route path = "/cart" element = {<Cart/>}/>
 
     </Routes>
 

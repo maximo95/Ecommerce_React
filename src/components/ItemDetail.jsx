@@ -1,6 +1,8 @@
 import React from 'react'
-
 import { Card } from 'react-bootstrap'
+import ItemCount from './ItemCount'
+
+
 
 
 function ItemDetail({detail,cargandoDetail}) {
@@ -11,8 +13,6 @@ function ItemDetail({detail,cargandoDetail}) {
 
   return (
     <>
-    <div>
-  
       <Card style={{ width: '18rem' }}>
           <Card.Img variant="top" src={imagen} />
           <Card.Body>
@@ -20,9 +20,11 @@ function ItemDetail({detail,cargandoDetail}) {
               <Card.Text>
               {description}
               </Card.Text>
+             
+                <ItemCount/>
+              
           </Card.Body>
       </Card>
-    </div>
     </>
     
   )
