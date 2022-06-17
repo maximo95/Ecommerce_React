@@ -42,7 +42,7 @@ export default function ItemCount() {
           <button className='boton' onClick={() => {restarProducto()}}> - </button>
           <button className='boton' onClick={() => {onAdd();cambiarBoton()}}>Agregar Carrito</button>
           <p> {valor} : </p>
-      </div> : <Link to = '/cart' > <button className='boton'>Ver carrito</button> </Link>
+      </div> : <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
     }
     </>
   )
