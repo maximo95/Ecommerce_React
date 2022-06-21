@@ -7,7 +7,8 @@ import ItemCount from './ItemCount'
 
 function ItemDetail({detail,cargandoDetail}) {
 
-    const {description, precio,imagen} = detail
+    const {description, precio,imagen,id} = detail
+
 
     console.log (cargandoDetail)
 
@@ -21,7 +22,7 @@ function ItemDetail({detail,cargandoDetail}) {
               {description}
               </Card.Text>
              
-                <ItemCount/>
+                <ItemCount id = {id}/>
               
           </Card.Body>
       </Card>

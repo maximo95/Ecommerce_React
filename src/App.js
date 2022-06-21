@@ -4,36 +4,43 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/NavBar";
 import Cart from './components/Cart';
+import CartContext from "./context/CartContext";
 
 
 
 function App() {
   return (
     <>
-    <BrowserRouter>
 
-    <Navbar/>
+      <BrowserRouter>
 
-    <Routes>
+      {/*<CartContext>*/}
 
-      {/*Todos los productos que se van a mostrar en el inicio */}
-      <Route path="/" element ={<ItemListContainer/>}/>
-      <Route path="/inicio" element ={<ItemListContainer/>}/>
+      <Navbar/>
 
-      {/*Todos los productos de una categoria puntual segun el id proporcionado*/}
-      <Route path="/categoria/:id" element ={<ItemListContainer/>}/>
+      <Routes>
 
-      {/*Un producto puntual seg{un el id} */}
-      <Route path="/item/:id" element ={<ItemDetailContainer/>}/>
-      {/*<Navbar/>
-      <ItemListContainer Greeting={"Bienvenidos a mi Ecommerce"} stock = {7} minimo ={1}/>
-    <ItemDetailContainer/>*/}
+        {/*Todos los productos que se van a mostrar en el inicio */}
+        <Route path="/" element ={<ItemListContainer/>}/>
+        <Route path="/inicio" element ={<ItemListContainer/>}/>
 
-      <Route path = "/cart" element = {<Cart/>}/>
+        {/*Todos los productos de una categoria puntual segun el id proporcionado*/}
+        <Route path="/categoria/:id" element ={<ItemListContainer/>}/>
 
-    </Routes>
+        {/*Un producto puntual seg{un el id} */}
+        <Route path="/item/:id" element ={<ItemDetailContainer/>}/>
+        {/*<Navbar/>
+        <ItemListContainer Greeting={"Bienvenidos a mi Ecommerce"} stock = {7} minimo ={1}/>
+      <ItemDetailContainer/>*/}
 
-</BrowserRouter>
+        <Route path = "/cart" element = {<Cart/>}/>
+
+      </Routes>
+
+     {/*</CartContext>*/}
+
+      </BrowserRouter>
+
 
     </>
   );

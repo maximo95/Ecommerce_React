@@ -2,14 +2,17 @@ import React from 'react'
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ItemCount() {
+export default function ItemCount({id}) {
 
     const stock = 7
     const minimo = 1
 
-    const [valor,setValor]= useState (minimo)
 
-    const sumarProducto = () => {
+
+    const [valor,setValor]= useState (minimo)
+    
+    const sumarProducto = (evento) => {
+      console.log (evento.currentTarget.parentNode.parentNode)
       if (valor < stock){
         setValor(valor + 1);
       } else {alert("No podes agregar más productos")}
@@ -37,8 +40,8 @@ export default function ItemCount() {
   return (
     <>
     { eventoBoton ? 
-      <div className='contador'>
-          <button className='boton' onClick={()=> {sumarProducto()}}> + </button>
+      <div className='contador' id={id}>
+          <button className='boton' onClick={(evento)=> {sumarProducto(evento)}}> + </button>
           <button className='boton' onClick={() => {restarProducto()}}> - </button>
           <button className='boton' onClick={() => {onAdd();cambiarBoton()}}>Agregar Carrito</button>
           <p> {valor} : </p>
