@@ -11,10 +11,10 @@ import CartContext from "./context/CartContext";
 function App() {
   return (
     <>
-
+ <CartContext>
       <BrowserRouter>
 
-      {/*<CartContext>*/}
+     
 
       <Navbar/>
 
@@ -37,11 +37,11 @@ function App() {
 
       </Routes>
 
-     {/*</CartContext>*/}
+     
 
       </BrowserRouter>
 
-
+      </CartContext>
     </>
   );
 }

@@ -22,7 +22,7 @@ function ItemDetail({detail,cargandoDetail}) {
               {description}
               </Card.Text>
              
-                <ItemCount id = {id}/>
+                <ItemCount detail = {detail}/>
               
           </Card.Body>
       </Card>

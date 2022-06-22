@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { createContext } from 'react'
+import { createContext, useEffect, useState } from 'react';
 
 export  const MiContexto = createContext ();
 
-export default function CartContext({chidren}) {
+export default function CartContext({children}) {
 
   const detallesProductos =
 
@@ -73,12 +72,34 @@ export default function CartContext({chidren}) {
   const [cart, setCart] = useState ([])
 
   //Metodo some: En el ItemDetail se va a encargar de detectar si el producto a agregar. Con este metodo se retorna un boleano
-  const isInCar = (id) =>{
-    return cart.some (x => x.id === id)
+  const isInCart = (id) =>{
+    return cart.findIndex(item => item.id === id)
   }
+ 
+  const agregarAlCarro = (item,cantidad) => {
+    console.log(item,cantidad);
+    //console.log(isInCart(item.id));
+    let posicion = isInCart(item.id)
+    console.log(posicion);
+    if (posicion == -1){
+      setCart([...cart,{...item,cantidad:cantidad}])
+    } else {
+    let auxCartCopy = [...cart]
+    auxCartCopy[posicion].cantidad = auxCartCopy[posicion].cantidad + cantidad
+    setCart(auxCartCopy)
+    }
 
-  return (<MiContexto.Provider value={{cart, isInCar}}>
-          {chidren}
+  }
+  useEffect(() => {
+    console.log(cart);
+  }, [cart])
+
+   const removeItem = (id) =>{
+    setCart (cart.filter(item => item.id != id))
+   }
+  
+  return (<MiContexto.Provider value={{cart, agregarAlCarro,removeItem}}>
+          {children}
           </MiContexto.Provider>
         )
 }

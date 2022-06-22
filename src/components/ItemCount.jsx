@@ -1,9 +1,11 @@
 import React from 'react'
+import { useContext } from 'react';
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { MiContexto } from '../context/CartContext';
+export default function ItemCount({detail}) {
 
-export default function ItemCount({id}) {
-
+  const {agregarAlCarro,removeItem} = useContext (MiContexto);
     const stock = 7
     const minimo = 1
 
@@ -29,21 +31,25 @@ export default function ItemCount({id}) {
    //const onAdd = ()=>{alert (`se agregaron ${valor} productos al carrito`);
    //setValor(minimo);}
   
-    const onAdd = () => {console.log (`se agregaron ${valor} productos al carrito`)}
+    const onAdd = () => {
+      //console.log (`se agregaron ${valor} productos al carrito`)
+      setEventoBoton (false)
+      agregarAlCarro (detail,valor)
+    }
    
     //const reiniciar = () => {setValor (minimo)}
 
     const [eventoBoton,setEventoBoton] = useState (true)
 
-    function cambiarBoton(){ setEventoBoton (false)}
 
   return (
     <>
     { eventoBoton ? 
-      <div className='contador' id={id}>
+      <div className='contador'>
           <button className='boton' onClick={(evento)=> {sumarProducto(evento)}}> + </button>
           <button className='boton' onClick={() => {restarProducto()}}> - </button>
-          <button className='boton' onClick={() => {onAdd();cambiarBoton()}}>Agregar Carrito</button>
+          <button className='boton' onClick={() => {onAdd()}}>Agregar Carrito</button>
+          <div onClick={()=>removeItem(detail.id)}>borrar este producto del carro</div>
           <p> {valor} : </p>
       </div> : <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
     }
