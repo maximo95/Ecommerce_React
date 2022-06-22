@@ -98,7 +98,10 @@ export default function CartContext({children}) {
     setCart (cart.filter(item => item.id != id))
    }
   
-  return (<MiContexto.Provider value={{cart, agregarAlCarro,removeItem}}>
+   const clearCart = () => {
+    setCart([])
+   }
+  return (<MiContexto.Provider value={{cart, agregarAlCarro,removeItem,clearCart}}>
           {children}
           </MiContexto.Provider>
         )

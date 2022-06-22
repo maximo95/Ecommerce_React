@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { MiContexto } from '../context/CartContext';
 export default function ItemCount({detail}) {
 
-  const {agregarAlCarro,removeItem} = useContext (MiContexto);
+  const {agregarAlCarro,removeItem,clearCart} = useContext (MiContexto);
     const stock = 7
     const minimo = 1
 
@@ -50,6 +50,7 @@ export default function ItemCount({detail}) {
           <button className='boton' onClick={() => {restarProducto()}}> - </button>
           <button className='boton' onClick={() => {onAdd()}}>Agregar Carrito</button>
           <div onClick={()=>removeItem(detail.id)}>borrar este producto del carro</div>
+          <div onClick={()=> clearCart()}>eliminar todos los productos del carro</div>
           <p> {valor} : </p>
       </div> : <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
     }
