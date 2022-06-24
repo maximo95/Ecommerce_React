@@ -115,8 +115,6 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
 
   const {id} = useParams ();
 
-  console.log (id);
-
   const [cargandoProducto,setCargandoProducto] = useState (true)
   const [errorProducto, setErrorProducto] = useState (false)
   const [productos,setProductos] = useState ([]);
@@ -155,8 +153,6 @@ export default function ItemListContainer({Greeting, stock,minimo}) {
 
   return (
     <>
-
-
     <ItemList productos = {productos} errorProducto={errorProducto} cargandoProducto={cargandoProducto} />
     </>
   )

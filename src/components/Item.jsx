@@ -11,15 +11,12 @@ export default function Item({elemento}) {
         <Card.Img variant="top" src={imagen} />
         <Card.Body>
             <Card.Title>{titulo}</Card.Title>
-            <Card.Text>
-            
+            <Card.Text>            
                 {description} 
             </Card.Text>
             <Card.Text>
                 precio: {precio}
-            </Card.Text>
-
-           
+            </Card.Text>           
             <Link to={'/item/' + id} >  <Button variant="primary">Ver detalle</Button> </Link>
         </Card.Body>
         </Card>

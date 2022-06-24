@@ -11,7 +11,7 @@ export default function ItemList({productos,cargandoProducto,errorProducto}) {
 
         <div className='cartaProducto'>
 
-            {productos.map(elemento =><Item key={elemento.id} elemento ={elemento}/>)}
+          {productos.map(elemento =><Item key={elemento.id} elemento ={elemento}/>)}
 
         </div>
     </>

@@ -13,9 +13,7 @@ function App() {
     <>
  <CartContext>
       <BrowserRouter>
-
      
-
       <Navbar/>
 
       <Routes>
@@ -37,11 +35,9 @@ function App() {
 
       </Routes>
 
-     
-
       </BrowserRouter>
 
-      </CartContext>
+  </CartContext>
     </>
   );
 }

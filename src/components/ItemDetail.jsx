@@ -20,10 +20,8 @@ function ItemDetail({detail,cargandoDetail}) {
               <Card.Title>{precio}</Card.Title>
               <Card.Text>
               {description}
-              </Card.Text>
-             
-                <ItemCount detail = {detail}/>
-              
+              </Card.Text> 
+                <ItemCount detail = {detail}/>              
           </Card.Body>
       </Card>
     </>
