@@ -27,9 +27,6 @@ function App() {
 
         {/*Un producto puntual seg{un el id} */}
         <Route path="/item/:id" element ={<ItemDetailContainer/>}/>
-        {/*<Navbar/>
-        <ItemListContainer Greeting={"Bienvenidos a mi Ecommerce"} stock = {7} minimo ={1}/>
-      <ItemDetailContainer/>*/}
 
         <Route path = "/cart" element = {<Cart/>}/>
 

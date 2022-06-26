@@ -1,25 +1,39 @@
-import { useContext, useState,useEffect } from 'react';
+import { useContext } from 'react';
 import { MiContexto } from '../context/CartContext';
+import { Link } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap'
+import './Cart.css'
 
 export default function Cart() {
-  const {PrecioTotalProductos,cart} = useContext (MiContexto);
+  const {PrecioTotalProductos,cart,removeItem,clearCart} = useContext (MiContexto);
   console.log(PrecioTotalProductos)
-  const [render,setRender] = useState()
-
-  useEffect(() => {
-  setRender (PrecioTotalProductos())
-  }, [cart])
-  
+  const carritoVacio = cart.length === 0
   return (
     <>
+    <h1 className="Titulo">Mi Carrito</h1>
       {
-      cart.length > 0 ?
-      /*cart.map(producto =><ListGroup key = {cart.index} producto = {producto}></ListGroup>*/
-      cart.map((producto, id) => 
-        <div key={id}>{render}</div>)
-
+      carritoVacio ?
+      <>
+      <div className="CarritoVacio">
+        <h2>Tu carrito está vacío</h2>
+        <Link to= '/inicio'><Button className='BotonVacio'>volver a los productos</Button></Link>
+      </div>  
+      </>
       :
-      <h2>"Tu carrito está vacío"</h2>
+      <> 
+        {cart.map(producto => (<div className = "ItemCarrito" key={producto.id} >
+          <div><img className="ImagenItem" src={producto.imagen} alt ={producto.titulo}/></div>
+          <div>{producto.titulo}</div>
+          <div>{producto.precio}</div>
+          <div>x {producto.cantidad}</div>
+          <div>Subtotal: {producto.precio*producto.cantidad}</div>
+          <Button className="BotonItem" onClick={()=>removeItem(producto.id)} variant="danger" >X</Button>
+        </div>) )}
+        <div className="FueraDelMap">
+          <p className="Letra">Precio Final : {PrecioTotalProductos()} </p>
+          <Button onClick={()=> clearCart()} variant="danger">eliminar todo lo productos del carrito</Button>
+        </div> 
+      </>
       }
     </>
   )

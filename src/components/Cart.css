@@ -1,0 +1,46 @@
+.ItemCarrito{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90 px;
+    background-color: #386150;
+    margin-top: 15px;
+    color: white;
+}
+.ImagenItem{
+    height: 80px;
+    width: 80px;
+    margin-left: 10px;
+}
+
+.BotonItem{
+    margin: 10px;
+}
+
+.FueraDelMap{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+
+}
+
+.Letra{
+    font-size: 2rem;
+}
+
+.Titulo{
+    text-align: center;
+    color: #386150 ;
+}
+
+.CarritoVacio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.BotonVacio{
+    background-color:#386150;
+    border-color:#386150 ;
+}

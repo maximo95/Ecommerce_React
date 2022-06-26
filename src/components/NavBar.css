@@ -8,6 +8,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    flex-direction: row;
 }
 
 .imagenLogo {
@@ -24,3 +25,10 @@ a{
 a:hover {
     color: white;
 }
+
+
+.NumeroCarrito{
+    display: flex;
+    flex-direction: row;
+}
+

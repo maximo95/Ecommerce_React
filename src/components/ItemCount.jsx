@@ -48,10 +48,8 @@ export default function ItemCount({detail}) {
       <div className='contador'>
           <button className='boton' onClick={(evento)=> {sumarProducto(evento)}}> + </button>
           <button className='boton' onClick={() => {restarProducto()}}> - </button>
-          <button className='boton' onClick={() => {onAdd()}}>Agregar Carrito</button>
-          <div onClick={()=>removeItem(detail.id)}>borrar este producto del carro</div>
-          <div onClick={()=> clearCart()}>eliminar todos los productos del carro</div>
-          <p> {valor} : </p>
+          <button className='boton' onClick={() => {onAdd()}}>Agregar a Carrito</button>
+          <p>cantidad: {valor} </p>
       </div> : <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
     }
     </>

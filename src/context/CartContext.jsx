@@ -45,6 +45,7 @@ export default function CartContext({children}) {
    const PrecioTotalProductos = ()=> {
     return cart.reduce ((acumulador,item)=> acumulador += item.cantidad * item.precio, 0)
    }
+
  
   return (<MiContexto.Provider value={{cart, agregarAlCarro,removeItem,clearCart,cantidadProductos,PrecioTotalProductos}}>
           {children}
