@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
-import detallesProductos from '../DetallesProductos';
+import {doc,getDoc,getFirestore} from 'firebase/firestore'
 
 export default function ItemDetailContainer() {
 
@@ -10,32 +10,22 @@ export default function ItemDetailContainer() {
     const [errorDetail, setErrorDetail] = useState (false)
     const [detail,setDetail] = useState ({});
 
-    console.log(id)
-    console.log(typeof id)
 
     useEffect(() => {
 
-        const promesaDetail = new Promise ((resolveDetail,rejectDetail)=>{
+        const db = getFirestore();
 
-            setTimeout (()=>{resolveDetail (detallesProductos.find (articulo =>articulo.id == id))
-            },2000)
+        const productoRerencia = doc(db,'productos',id);
+
+        getDoc(productoRerencia)
         
-        }) 
-
-            promesaDetail.then ((articulo)=>{
-                setDetail (articulo);
-                console.log ('el articulo es:')
-                console.log (articulo)
-            })
-
-            promesaDetail.catch((errorDetail)=>{
-                setErrorDetail (true);
-            })
-            promesaDetail.finally (()=>{setCargandoDetail(false)})
-
-            console.log ("terminé la promesa")
-
-       
+        .then((promesaResuelta)=>{
+            setDetail({...promesaResuelta.data(),id:promesaResuelta.id})
+        })
+        .catch((errorDetail)=>{
+            setErrorDetail(errorDetail)
+        })
+        .finally(()=>{setCargandoDetail(false)});
 
     }, [id])
     
@@ -45,17 +35,12 @@ export default function ItemDetailContainer() {
     return (
     <>
 
-        	{console.log (detail)}
-        {/*<div>{detail && detail.map (detalle => <ItemDetail key ={detalle.id}  detalle ={detalle} cargandoDetail ={cargandoDetail} /> ) }</div>*/}
-
         <ItemDetail detail={detail} />
         
         <div>{errorDetail && "No se pudo cargar los productos"}</div>
 
 
-
         <div>{cargandoDetail && "Cargando los detalles del itemDetail.jsx"}</div>
-
 
 
     </>

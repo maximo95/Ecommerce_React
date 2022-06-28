@@ -3,23 +3,18 @@ import { Card } from 'react-bootstrap'
 import ItemCount from './ItemCount'
 
 
-
-
 function ItemDetail({detail,cargandoDetail}) {
 
-    const {description, precio,imagen,id} = detail
-
-
-    console.log (cargandoDetail)
+    const {descripcion, precio,imagenUrl} = detail
 
   return (
     <>
       <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={imagen} />
+          <Card.Img variant="top" src={imagenUrl} />
           <Card.Body>
               <Card.Title>{precio}</Card.Title>
               <Card.Text>
-              {description}
+              {descripcion}
               </Card.Text> 
                 <ItemCount detail = {detail}/>              
           </Card.Body>

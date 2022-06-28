@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { MiContexto } from '../context/CartContext';
 import { Link } from 'react-router-dom';
-import { Button, Card } from 'react-bootstrap'
+import { Button} from 'react-bootstrap'
 import './Cart.css'
 
 export default function Cart() {
@@ -22,8 +22,8 @@ export default function Cart() {
       :
       <> 
         {cart.map(producto => (<div className = "ItemCarrito" key={producto.id} >
-          <div><img className="ImagenItem" src={producto.imagen} alt ={producto.titulo}/></div>
-          <div>{producto.titulo}</div>
+          <div><img className="ImagenItem" src={producto.imagenUrl} alt ={producto.nombre}/></div>
+          <div>{producto.nombre}</div>
           <div>{producto.precio}</div>
           <div>x {producto.cantidad}</div>
           <div>Subtotal: {producto.precio*producto.cantidad}</div>

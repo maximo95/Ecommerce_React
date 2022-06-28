@@ -8,6 +8,7 @@ const detallesProductos =
       precio:3500,
       imagen:'/imagenes/cafe_brasil_compra.png',
       categoria: "granos",
+      stock:5,
     },
     { 
       id:2,
@@ -16,6 +17,7 @@ const detallesProductos =
       precio:3000,
       imagen:'/imagenes/cafe_catucai.jpg',
       categoria: "granos",
+      stock:7,
     },
     {
       id:3,
@@ -24,6 +26,7 @@ const detallesProductos =
       precio:6000,
       imagen:'/imagenes/cafe_col_compra.png',
       categoria: "granos",
+      stock:3,
     },
     {
       id:4,
@@ -32,6 +35,7 @@ const detallesProductos =
       precio:8000,
       imagen:'/imagenes/cafe_costarica.png',
       categoria: "granos",
+      stock:7,
     },
     {
       id:5,
@@ -40,6 +44,7 @@ const detallesProductos =
       precio:8000,
       imagen: '/imagenes/cafetera_express.jpg',
       categoria: "cafeteras",
+      stock:3,
     },
   
     {
@@ -49,6 +54,7 @@ const detallesProductos =
       precio:8000,
       imagen: '/imagenes/cafetera_italiana.jpg',
       categoria: "cafeteras",
+      stock:5,
     },
   
     {
@@ -58,7 +64,19 @@ const detallesProductos =
       precio:8000,
       imagen: '/imagenes/prensa_francesa.jpg',
       categoria: "cafeteras",
+      stock:8,
+    },
+
+    {
+      id:8,
+      titulo: "cafetera de filtro",
+      description: "Cafetera de filtro, diseñada para preparar cafe de forma más rápida",
+      precio:2000,
+      imagen: '/imagenes/imagen_cafetera_filtro.jpg',
+      categoria: "cafeteras",
+      stock:9,
     }
+  
   
   ];
 

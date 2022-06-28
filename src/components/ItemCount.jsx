@@ -3,19 +3,14 @@ import { useContext } from 'react';
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { MiContexto } from '../context/CartContext';
+
 export default function ItemCount({detail}) {
 
-  const {agregarAlCarro,removeItem,clearCart} = useContext (MiContexto);
-    const stock = 7
-    const minimo = 1
-
-
-
-    const [valor,setValor]= useState (minimo)
+  const {agregarAlCarro} = useContext (MiContexto);
+    const [valor,setValor]= useState (1)
     
     const sumarProducto = (evento) => {
-      console.log (evento.currentTarget.parentNode.parentNode)
-      if (valor < stock){
+      if (valor < detail.stock){
         setValor(valor + 1);
       } else {alert("No podes agregar más productos")}
     }
@@ -50,7 +45,12 @@ export default function ItemCount({detail}) {
           <button className='boton' onClick={() => {restarProducto()}}> - </button>
           <button className='boton' onClick={() => {onAdd()}}>Agregar a Carrito</button>
           <p>cantidad: {valor} </p>
-      </div> : <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
+      </div> 
+      :
+      <> 
+       <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
+       <Link to ='/inicio'> <button className='boton'>Seguir Comprando</button> </Link>      
+      </>
     }
     </>
   )
