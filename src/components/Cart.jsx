@@ -33,6 +33,9 @@ export default function Cart() {
           <p className="Letra">Precio Final : {PrecioTotalProductos()} </p>
           <Button onClick={()=> clearCart()} variant="danger">eliminar todo lo productos del carrito</Button>
         </div> 
+        <div className="FueraDelMap">
+          <Link to = '/checkout'>  <Button>Terminar Compra</Button> </Link>
+        </div> 
       </>
       }
     </>
