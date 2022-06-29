@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { MiContexto } from '../context/CartContext';
 import { Link } from 'react-router-dom';
-import { Button} from 'react-bootstrap'
-import './Cart.css'
+import { Button} from 'react-bootstrap';
+import './Cart.css';
 
 export default function Cart() {
   const {PrecioTotalProductos,cart,removeItem,clearCart} = useContext (MiContexto);
