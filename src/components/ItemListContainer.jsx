@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
-import'./ItemListContainer.css';
-import {collection,getDocs,getFirestore,query,where} from 'firebase/firestore'
+import './ItemListContainer.css';
 
 
 export default function ItemListContainer() {
@@ -42,7 +42,6 @@ export default function ItemListContainer() {
       .finally(()=>{setCargandoProducto(false)})}
 
   }, [id])
-  
   return (
     <>
     <ItemList productos = {productos} errorProducto={errorProducto} cargandoProducto={cargandoProducto} />

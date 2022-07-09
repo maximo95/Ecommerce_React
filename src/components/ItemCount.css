@@ -1,0 +1,14 @@
+.contador{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.botones{
+    display: flex;
+    justify-content: space-around;
+}
+.botonAgregar{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

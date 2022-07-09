@@ -3,12 +3,7 @@ body{
 }
 
 .navegador{
-    display: flex;
     background-color: #386150;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    flex-direction: row;
 }
 
 .imagenLogo {

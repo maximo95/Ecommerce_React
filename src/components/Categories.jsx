@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect,useState } from 'react'
 import {collection,getDocs,getFirestore} from 'firebase/firestore'
 import {Link} from 'react-router-dom';
+import {Nav} from 'react-bootstrap';
 
 export default function Categories() {
 
@@ -22,9 +23,9 @@ export default function Categories() {
     <>
     {
         categorias.map((categoria)=> 
-        <Link key={categoria}  to= {'categoria/' + categoria}>
+        <Nav.Link  key={categoria} as={Link} to= {'categoria/' + categoria}>
             {categoria}
-        </Link>)
+        </Nav.Link>)
     }
     </>
   )

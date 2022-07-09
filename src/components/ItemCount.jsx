@@ -1,8 +1,7 @@
-import React from 'react'
-import { useContext } from 'react';
-import {useState} from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MiContexto } from '../context/CartContext';
+import './ItemCount.css';
 
 export default function ItemCount({detail}) {
 
@@ -41,10 +40,14 @@ export default function ItemCount({detail}) {
     <>
     { eventoBoton ? 
       <div className='contador'>
-          <button className='boton' onClick={(evento)=> {sumarProducto(evento)}}> + </button>
-          <button className='boton' onClick={() => {restarProducto()}}> - </button>
-          <button className='boton' onClick={() => {onAdd()}}>Agregar a Carrito</button>
-          <p>cantidad: {valor} </p>
+          <div className='botones' >
+            <button className='boton' onClick={() => {restarProducto()}}> - </button>
+            <p>cantidad: {valor} </p>
+            <button className='boton' onClick={(evento)=> {sumarProducto(evento)}}> + </button>
+          </div>
+          <div className='botonAgregar'>       
+            <button className='boton' onClick={() => {onAdd()}}>Agregar a Carrito</button>
+          </div>
       </div> 
       :
       <> 

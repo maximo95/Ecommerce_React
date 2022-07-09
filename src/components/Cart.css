@@ -1,15 +1,30 @@
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.mensajeVacio{
+    margin-top: 20px;
+}
+
+
 .ItemCarrito{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 90 px;
     background-color: #386150;
-    margin-top: 15px;
+    margin-top: 18px;
     color: white;
 }
 .ImagenItem{
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     margin-left: 10px;
 }
 
@@ -20,7 +35,9 @@
 .FueraDelMap{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 20px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    align-content: flex-end;
 
 }
 
@@ -31,6 +48,8 @@
 .Titulo{
     text-align: center;
     color: #386150 ;
+    margin-top: 35px;
+    margin-bottom: 40px;
 }
 
 .CarritoVacio {
@@ -43,4 +62,6 @@
 .BotonVacio{
     background-color:#386150;
     border-color:#386150 ;
+    margin-top: 30px;
+    margin-bottom: 280px;
 }

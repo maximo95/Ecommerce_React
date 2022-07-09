@@ -2,10 +2,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
-import Navbar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import Cart from './components/Cart';
 import CartContext from "./context/CartContext";
 import Checkout from './components/Checkout';
+import Footer from './components/Footer';
+import './App.css';
+import Contact from './components/Contact';
 
 
 
@@ -15,7 +18,7 @@ function App() {
  <CartContext>
       <BrowserRouter>
      
-      <Navbar/>
+      <NavBar/>
 
       <Routes>
 
@@ -33,7 +36,11 @@ function App() {
 
         <Route path="/checkout" element={<Checkout/>} />
 
+        <Route path = "/contact" element = {<Contact/>}/>
+
       </Routes>
+
+      <Footer/>
 
       </BrowserRouter>
 

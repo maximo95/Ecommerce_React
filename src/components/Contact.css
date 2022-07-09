@@ -1,0 +1,26 @@
+.infoContacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.tituloContacto{
+    color: #386150;
+}
+
+@media screen and (max-width: 800px) {
+    .letraContacto{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .letraContacto{
+        font-size: 0.7rem;
+    }
+    .tituloContacto{
+        font-size: 0.9rem;
+    }
+}

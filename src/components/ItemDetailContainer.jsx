@@ -34,14 +34,12 @@ export default function ItemDetailContainer() {
 
     return (
     <>
-
+    
         <ItemDetail detail={detail} />
         
         <div>{errorDetail && "No se pudo cargar los productos"}</div>
 
-
         <div>{cargandoDetail && "Cargando los detalles del itemDetail.jsx"}</div>
-
 
     </>
 

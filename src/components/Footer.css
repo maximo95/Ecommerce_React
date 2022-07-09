@@ -1,0 +1,21 @@
+
+.footerTexto{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 1.45rem;
+    
+}
+
+@media screen and (max-width: 800px) {
+    .footerTexto {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .footerTexto {
+        font-size: 0.8rem;
+    }
+}

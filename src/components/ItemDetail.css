@@ -1,0 +1,7 @@
+.itemDetalle{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
