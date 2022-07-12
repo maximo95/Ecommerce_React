@@ -3,17 +3,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 480px;
 }
 
 .tituloContacto{
     color: #386150;
 }
 
+@media screen and (max-width: 911px) {
+
+    .infoContacto{
+        height: 400px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .letraContacto{
         font-size: 0.8rem;
     }
+
+    
 }
 
 @media screen and (max-width: 350px) {
@@ -23,4 +32,12 @@
     .tituloContacto{
         font-size: 0.9rem;
     }
+}
+
+@media screen and (max-width: 307px) {
+
+    .infoContacto{
+        height: 350px;
+    }
+
 }

@@ -3,6 +3,8 @@ import { useContext, useState } from 'react';
 import { MiContexto } from '../context/CartContext';
 import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import './Checkout.css';
+
 
 
 export default function Checkout() {
@@ -44,8 +46,14 @@ export default function Checkout() {
     if (cart.length === 0){
         return (
             <>
-            <h1>Tu carrito está vacío</h1>
-            <Link to= '/'><Button>volver a los productos</Button></Link>
+            <div className='detallesVacio'>
+            <h1 className='tituloVacio'>Tu carrito está vacío</h1>
+            <p className='texto-vacio'>El formulario no estará disponible</p>
+            <p className='texto-vacio'>Debes añadir productos al carrito</p>
+            <div className='botonVacio'>
+                <Link to= '/'><Button className='color-Vacio'>volver a los productos</Button></Link>
+            </div>
+            </div>
             </>
         )
     }
@@ -53,15 +61,22 @@ export default function Checkout() {
 
   return (
     <>
-    <h1>Complete sus datos para terminar la compra</h1>
-  
-    <input onChange={(e)=> setNombre(e.target.value)} placeholder="ingrese su nombre"></input>
-
-    <input onChange={(e)=> setCorreo(e.target.value)} placeholder="ingrese su celular"></input>
-
-    <input onChange={(e)=> setCelular(e.target.value)} placeholder="ingrese su correo electronico"></input>
-
-    <button onClick={()=>manejarClick()}>Terminar Compra</button>
+    <h1 className='tituloFormulario' >Complete sus datos para terminar la compra</h1>
+    <div className='formulario' >
+        <p className='textoFormulario'>Ingrese su nombre</p>
+        <input onChange={(e)=> setNombre(e.target.value)} placeholder="ingrese su nombre"></input>
+    </div>
+    <div className='formulario'>
+        <p className='textoFormulario'>Ingrese su celular</p>
+        <input onChange={(e)=> setCorreo(e.target.value)} placeholder="ingrese su celular"></input>
+    </div>
+    <div className='formulario'>
+        <p className='textoFormulario'>Ingrese su correo electronico</p>
+        <input onChange={(e)=> setCelular(e.target.value)} placeholder="ingrese su correo electronico"></input>
+    </div>
+    <div className='botonFormulario'>
+        <Button className='color-boton' onClick={()=>manejarClick()}>Terminar Compra</Button>
+    </div>
 
     {
         compraRealizada &&
