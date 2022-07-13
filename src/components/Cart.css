@@ -63,5 +63,40 @@ body{
     background-color:#386150;
     border-color:#386150 ;
     margin-top: 30px;
-    margin-bottom: 280px;
+    margin-bottom: 180px;
 }
+
+@media screen and (max-width: 1075px){
+    .BotonVacio{
+    margin-bottom: 102px;
+    }
+}
+
+
+@media screen and (max-width: 580px){
+    .mensajeVacio{
+        font-size: 1.13rem;
+    }
+    .titulo-vacio-carrito{
+        font-size: 1.13rem;
+    }
+    .BotonVacio{
+        margin-bottom: 136px;
+        }
+}
+@media screen and (max-width: 307px){
+    .BotonVacio{
+        margin-bottom: 102px;
+    }
+}
+
+@media screen and (max-width: 238px){
+    .mensajeVacio{
+        font-size: 1.1rem;
+    }
+    .titulo-vacio-carrito{
+        font-size: 1.1rem;
+    }
+}
+
+

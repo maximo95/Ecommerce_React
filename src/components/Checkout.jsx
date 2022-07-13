@@ -61,33 +61,42 @@ export default function Checkout() {
 
   return (
     <>
-    <h1 className='tituloFormulario' >Complete sus datos para terminar la compra</h1>
-    <div className='formulario' >
-        <p className='textoFormulario'>Ingrese su nombre</p>
-        <input onChange={(e)=> setNombre(e.target.value)} placeholder="ingrese su nombre"></input>
-    </div>
-    <div className='formulario'>
-        <p className='textoFormulario'>Ingrese su celular</p>
-        <input onChange={(e)=> setCorreo(e.target.value)} placeholder="ingrese su celular"></input>
-    </div>
-    <div className='formulario'>
-        <p className='textoFormulario'>Ingrese su correo electronico</p>
-        <input onChange={(e)=> setCelular(e.target.value)} placeholder="ingrese su correo electronico"></input>
-    </div>
-    <div className='botonFormulario'>
-        <Button className='color-boton' onClick={()=>manejarClick()}>Terminar Compra</Button>
-    </div>
-
     {
-        compraRealizada &&
-                            <>
-                                <div>
-                                    <h1>Tu compra fue realizada con exito</h1>
-                                    <p>El comprobante de tu compra es : {idCompras}</p>
-                                </div>
-                            </>
-    }
+    compraRealizada ? (
 
+        <>
+            <div className='compraRealizada'>
+            <h1 className='tituloRealizado'>Tu compra fue realizada con exito</h1>
+            <p className='textoRealizado'>El comprobante de tu compra es : {idCompras}</p>
+            <p className='textoRealizado'>Nos pondremos en contacto en la brevedad</p>
+            <p className='textoRealizado'>En tu correo encontraras los detalles de la compra</p>
+            <p className='textoRealizado'>Cualquier dudas que tengas no dudes en contactarnos</p>
+            <p className='textoRealizado'>Con tu pedido te llegará un cupon para un descuento en una futura compra</p>
+            </div>
+        </>
+    )
+    :
+    (
+    <>
+        <h1 className='tituloFormulario' >Complete sus datos para terminar la compra</h1>
+        <div className='formulario' >
+            <p className='textoFormulario'>Ingrese su nombre</p>
+            <input onChange={(e)=> setNombre(e.target.value)} placeholder="ingrese su nombre"></input>
+        </div>
+        <div className='formulario'>
+            <p className='textoFormulario'>Ingrese su celular</p>
+            <input onChange={(e)=> setCorreo(e.target.value)} placeholder="ingrese su celular"></input>
+        </div>
+        <div className='formulario'>
+            <p className='textoFormulario'>Ingrese su correo electronico</p>
+            <input onChange={(e)=> setCelular(e.target.value)} placeholder="ingrese su correo electronico"></input>
+        </div>
+        <div className='botonFormulario'>
+            <Button className='color-boton' onClick={()=>manejarClick()}>Terminar Compra</Button>
+        </div>
+    </>
+    )
+    }
     </>
   )
 }

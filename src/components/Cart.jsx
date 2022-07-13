@@ -16,7 +16,7 @@ export default function Cart() {
       carritoVacio ?
       <>
       <div className="CarritoVacio">
-        <h2>Tu carrito está vacío</h2>
+        <h2 className='titulo-vacio-carrito'>Tu carrito está vacío</h2>
         <h2 className='mensajeVacio'>Vuelve al inicio para comprar</h2>
         <Link to= '/inicio'><Button className='BotonVacio'>volver a los productos</Button></Link>
       </div>  

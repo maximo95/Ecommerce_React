@@ -1,3 +1,29 @@
 .imagenItem{
     height: 286px;
 }
+
+.boton-item{
+    background-color: #386150;
+    border-color: #386150;
+}
+
+.boton-centrar{
+    display: flex;
+    justify-content: center;
+}
+
+.item-Detalle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.centrar-datos{
+    display: flex;
+    justify-content: center;
+}
+
+.centrar-nombre{
+    display: flex;
+    justify-content: center;
+}
+

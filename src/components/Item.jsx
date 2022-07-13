@@ -11,17 +11,17 @@ export default function Item({elemento}) {
         <Card style={{ width: '18rem' }} className = "item-Detalle">
         <Card.Img variant="top" src={imagenUrl} className="imagenItem" />
         <Card.Body>
-            <Card.Title>{nombre}</Card.Title>
-            <Card.Text>            
+            <Card.Title className='centrar-nombre'>{nombre}</Card.Title>
+            <Card.Text className='centrar-datos'>            
                 {descripcion} 
             </Card.Text>
-            <Card.Text>
+            <Card.Text className='centrar-datos'>
                 disponible: {stock}
             </Card.Text>
-            <Card.Text>
+            <Card.Text className='centrar-datos'>
                 precio: {precio}
             </Card.Text>           
-            <Link to={'/item/' + id} >  <Button variant="primary">Ver detalle</Button> </Link>
+            <Link to={'/item/' + id} > <div className='boton-centrar'><Button className='boton-item'>Ver detalle</Button></div></Link>
         </Card.Body>
         </Card>
   )

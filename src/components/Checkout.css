@@ -118,3 +118,48 @@
         font-size: 1.3rem;
     }
 }
+
+.compraRealizada{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 490px;
+}
+
+.tituloRealizado{
+    color: #386150;
+}
+
+.textoRealizado{
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1050px){
+
+    .compraRealizada{
+        height: 400px;
+    }
+
+}
+
+@media screen and (max-width: 720px){
+    .tituloRealizado{
+        font-size: 1.3rem;
+    }
+
+    .textoRealizado{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 307px){
+    .tituloRealizado{
+        font-size: 1.19rem;
+    }
+
+    .textoRealizado{
+        font-size: 0.9rem;
+    }
+}
+
