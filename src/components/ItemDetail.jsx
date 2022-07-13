@@ -14,8 +14,10 @@ function ItemDetail({detail}) {
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={imagenUrl} />
             <Card.Body>
-                <Card.Title>{precio}</Card.Title>
-                <Card.Text>
+                <Card.Title className='centrar-detail-precio'>
+                  {precio}$
+                </Card.Title>
+                <Card.Text className='centrar-detail-descripcion'>
                 {descripcion}
                 </Card.Text> 
                   <ItemCount detail = {detail}/>              

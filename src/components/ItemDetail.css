@@ -5,3 +5,13 @@
     margin-top: 27px;
     margin-bottom: 27px;
 }
+
+.centrar-detail-precio{
+    display: flex;
+    justify-content: center;
+}
+
+.centrar-detail-descripcion{
+    display: flex;
+    justify-content: center;
+}

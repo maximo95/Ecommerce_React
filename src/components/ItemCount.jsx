@@ -41,9 +41,9 @@ export default function ItemCount({detail}) {
     { eventoBoton ? 
       <div className='contador'>
           <div className='botones' >
-            <button className='boton' onClick={() => {restarProducto()}}> - </button>
-            <p>cantidad: {valor} </p>
-            <button className='boton' onClick={(evento)=> {sumarProducto(evento)}}> + </button>
+            <button className='boton-izquierdo' onClick={() => {restarProducto()}}> - </button>
+            <p>{valor}</p>
+            <button className='boton-derecho' onClick={(evento)=> {sumarProducto(evento)}}> + </button>
           </div>
           <div className='botonAgregar'>       
             <button className='boton' onClick={() => {onAdd()}}>Agregar a Carrito</button>
@@ -51,8 +51,10 @@ export default function ItemCount({detail}) {
       </div> 
       :
       <> 
-       <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
-       <Link to ='/inicio'> <button className='boton'>Seguir Comprando</button> </Link>      
+      <div className='grupo-botones'>
+        <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
+        <Link to ='/inicio'> <button className='boton'>Seguir Comprando</button> </Link>
+      </div>      
       </>
     }
     </>

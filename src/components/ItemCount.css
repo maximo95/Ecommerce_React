@@ -5,10 +5,28 @@
 }
 .botones{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+
 }
+.boton-izquierdo{
+    background-color:#386150;
+    margin-right: 12px;
+}
+.boton-derecho{
+    background-color:#386150;
+    margin-left: 12px;
+}
+
 .botonAgregar{
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+.grupo-botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
 }
