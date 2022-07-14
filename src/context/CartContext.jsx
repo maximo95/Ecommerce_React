@@ -4,8 +4,7 @@ export  const MiContexto = createContext ();
 
 export default function CartContext({children}) {
 
-  const [cart, setCart] = useState ([])
-
+  const [cart, setCart] =  useState(JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')):[])
   //Metodo some: En el ItemDetail se va a encargar de detectar si el producto a agregar. Con este metodo se retorna un boleano
   const isInCart = (id) =>{
     return cart.findIndex(item => item.id === id)
@@ -26,7 +25,7 @@ export default function CartContext({children}) {
 
   }
   useEffect(() => {
-    console.log(cart);
+    localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart])
 
    const removeItem = (id) =>{

@@ -133,6 +133,7 @@
 
 .textoRealizado{
     font-size: 1.25rem;
+    padding-top: 10px;
 }
 
 @media screen and (max-width: 1050px){

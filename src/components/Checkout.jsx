@@ -9,7 +9,7 @@ import './Checkout.css';
 
 export default function Checkout() {
 
-    const {cart,PrecioTotalProductos} = useContext(MiContexto);
+    const {cart,PrecioTotalProductos,clearCart} = useContext(MiContexto);
 
     const[nombre,setNombre] = useState();
 
@@ -71,7 +71,9 @@ export default function Checkout() {
             <p className='textoRealizado'>Nos pondremos en contacto en la brevedad</p>
             <p className='textoRealizado'>En tu correo encontraras los detalles de la compra</p>
             <p className='textoRealizado'>Cualquier dudas que tengas no dudes en contactarnos</p>
-            <p className='textoRealizado'>Con tu pedido te llegará un cupon para un descuento en una futura compra</p>
+            <div className='botonFormulario'>
+            <Link to= '/'><Button className='color-boton' onClick={clearCart}>Terminar Compra</Button></Link>
+            </div>
             </div>
         </>
     )
