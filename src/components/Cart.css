@@ -44,6 +44,27 @@ body{
 .Letra{
     font-size: 2rem;
 }
+@media screen and (max-width: 409px){
+    .letra-carrito-compra{
+        font-size: 0.65rem !important;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .letra-carrito-compra{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 563px){
+    .Letra{
+        font-size: 1.1rem;
+    } 
+    .Letra-eliminar{
+        font-size: 0.85rem;
+    }
+}
+
 
 .Titulo{
     text-align: center;

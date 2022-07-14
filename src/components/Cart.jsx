@@ -25,15 +25,15 @@ export default function Cart() {
       <> 
         {cart.map(producto => (<div className = "ItemCarrito" key={producto.id} >
           <div><img className="ImagenItem" src={producto.imagenUrl} alt ={producto.nombre}/></div>
-          <div>{producto.nombre}</div>
-          <div>{producto.precio}</div>
-          <div>x {producto.cantidad}</div>
-          <div>Subtotal: {producto.precio*producto.cantidad}</div>
+          <div><p className='letra-carrito-compra'> {producto.nombre}</p></div>
+          <div><p className='letra-carrito-compra'>{producto.precio}</p></div>
+          <div><p className='letra-carrito-compra'>x {producto.cantidad}</p></div>
+          <div><p className='letra-carrito-compra'>Subtotal: {producto.precio*producto.cantidad}</p></div>
           <Button className="BotonItem" onClick={()=>removeItem(producto.id)} variant="danger" >X</Button>
         </div>) )}
         <div className="FueraDelMap">
           <p className="Letra">Precio Final : {PrecioTotalProductos()} </p>
-          <Button onClick={()=> clearCart()} variant="danger">eliminar todo lo productos del carrito</Button>
+          <Button onClick={()=> clearCart()} variant="danger">vaciar carrito</Button>
         </div> 
         <div className="FueraDelMap">
           <Link to = '/checkout'>  <Button>Terminar Compra</Button> </Link>
