@@ -4,7 +4,7 @@ Proyecto ecommerce de venta de café. Este proyecto se realizó con React js.
 
 ## Cómo correr este proyecto
 
-Este proyecto se encuentra deployado en firebase:
+Este proyecto se encuentra deployado en firebase y puede acceder en el siguiente link : [https://project-1780528557902881397.web.app/](https://project-1780528557902881397.web.app/)
 
 Además, este proyecto se puede correr de manera local. Para esto debes seguir los suientes pasos:
 
