@@ -29,7 +29,7 @@ React-bootstrap: Librería que provee componentes de Bootstrap como componentes 
 
 React-router-dom:  Paquete para implementar routing dinámico en una web app. En este proyecto, utilizado para el routing. Para descargarlo se debe escribir en la terminar de tu proyecto npm add `react-router-dom`.
 
-### Gif de compra y checkout
+# Gif de compra y checkout
 
 
 
