@@ -31,7 +31,7 @@ React-router-dom:  Paquete para implementar routing dinámico en una web app. En
 
 # Gif de compra y checkout
 
-
+![React App - 15 July 2022](https://user-images.githubusercontent.com/83258642/179253368-3889752c-b2b9-4f45-b049-16bc6c9753fb.gif)
 
 ## Sugerencias y errores encontrados
 
