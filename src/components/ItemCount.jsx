@@ -46,7 +46,7 @@ export default function ItemCount({detail}) {
       <> 
       <div className='grupo-botones'>
         <Link to = '/cart' > <button className='boton'>Terminar Compra</button> </Link>
-        <Link to ='/inicio'> <button className='boton centrar-datos-abajo'>Seguir Comprando</button> </Link>
+        <Link to ='/inicio'> <button className='centrar-datos-abajo'>Seguir Comprando</button> </Link>
       </div>      
       </>
     }
