@@ -11,10 +11,7 @@ export default function CartContext({children}) {
   }
  
   const agregarAlCarro = (item,cantidad) => {
-    console.log(item,cantidad);
-    //console.log(isInCart(item.id));
     let posicion = isInCart(item.id)
-    console.log(posicion);
     if (posicion == -1){
       setCart([...cart,{...item,cantidad:cantidad}])
     } else {

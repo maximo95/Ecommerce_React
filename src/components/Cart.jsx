@@ -6,7 +6,6 @@ import './Cart.css';
 
 export default function Cart() {
   const {PrecioTotalProductos,cart,removeItem,clearCart} = useContext (MiContexto);
-  console.log(PrecioTotalProductos)
   const carritoVacio = cart.length === 0
   return (
     <>

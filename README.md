@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Coffe Store: Ecommerce con React js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto ecommerce de venta de café. Este proyecto se realizó con React js.
 
-## Available Scripts
+## Cómo correr este proyecto
 
-In the project directory, you can run:
+Este proyecto se encuentra deployado en firebase:
 
-### `npm start`
+Además, este proyecto se puede correr de manera local. Para esto debes seguir los suientes pasos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.Descargr el proyecto de este repositorio.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2.Abrí el directorio del proyecto en un editor de código.
 
-### `npm test`
+3.Corré el comando `npm start`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4.Abrí http://localhost:3000 para verlo en tu navegador.
 
-### `npm run build`
+## Build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Este proyecto se realizó con React, utilizando una lista de productos ubicada en una base de dato de [Firebase](https://firebase.google.com/).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Librerias utlizadas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Material-Icons](https://developers.google.com/fonts/docs/material_icons) : Librería utilizada para añadir íconos. En este proyecto, utilizada para el ícono de Cart. Para utilizarla se debe añadir en el `<head><link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></head>` del archivo index.html (de la carpeta public).
 
-### `npm run eject`
+React-bootstrap: Librería que provee componentes de Bootstrap como componentes puros de React. En este proyecto, utilizada (entre otro lugares) en la Navbar, las card de producto y los botones. Añadilo a tu proyecto con `npm add react-bootstrap` en la terminal del proyecto.   
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React-router-dom:  Paquete para implementar routing dinámico en una web app. En este proyecto, utilizado para el routing. Para descargarlo se debe escribir en la terminar de tu proyecto npm add `react-router-dom`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Gif de compra y checkout
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Sugerencias y errores encontrados
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Comunicarse al e-mail: maximollallire@gmail.com

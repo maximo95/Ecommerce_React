@@ -21,20 +21,13 @@ export default function ItemCount({detail}) {
         alert ("La cantidad mínima es 1")
       }
     }
-  //Esta función también habría funcionado Es la funcion onAdd y reiniciar juntas. Ojo repasar Arrow function
-   //const onAdd = ()=>{alert (`se agregaron ${valor} productos al carrito`);
-   //setValor(minimo);}
   
     const onAdd = () => {
-      //console.log (`se agregaron ${valor} productos al carrito`)
       setEventoBoton (false)
       agregarAlCarro (detail,valor)
     }
-   
-    //const reiniciar = () => {setValor (minimo)}
 
     const [eventoBoton,setEventoBoton] = useState (true)
-
 
   return (
     <>
